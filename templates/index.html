@@ -23,13 +23,14 @@
                     <li>
                         <div class="row-container">
                             <div class="title-container">
-                                <h3><a href={{ prop.title_url }}>{{ prop.title }}</a></h3>
-                                <h3>{{ prop.description }}</h3>
+                                <h3>{{ prop.name }}</h3>
+                                <h3>{{ prop.locality }}</h3>
                                 <h3>Cena: {{ prop.price }}</h3>
+                                <h3><a href={{ prop.prop_url_endp }}>Sreality API Endpoint</a></h3>
                             </div>
                             {% for img in images[prop.id] %}
                                 <div>
-                                    <img src={{ img.url }} alt={{ prop.title }}>
+                                    <img src={{ img.url }}>
                                 </div>
                             {% endfor %}
                         </div>

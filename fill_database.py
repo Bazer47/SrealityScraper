@@ -8,6 +8,10 @@ from models import Property, Image
 
 
 def read_json(path: str) -> list:
+    # data = [json.loads(line) for line in open(path, 'r')]
+    # print(data)
+    f = open(path, "r")
+    print(f.read())
     with open(path, "r") as f:
         json_lst = json.load(f)
     return json_lst
@@ -19,7 +23,7 @@ def fill_db():
     PATH_JSON = "web_scrape.json"
     json_lst = read_json(PATH_JSON)
 
-    if len(json_lst) < 19:
+    if len(json_lst) < 1:
         raise ValueError(f"Only {len(json_lst)} properties are scraped.")
 
     # Needs to be inside Flask app context
@@ -29,10 +33,10 @@ def fill_db():
         if len(db.session.execute(select(Property).order_by(Property.id)).all()) >= TOTAL_COUNT:
             break
         prop_tmp = Property(
-            title=json_prop["title"],
-            title_url=json_prop["title_url"],
+            name=json_prop["name"],
+            prop_url_endp=json_prop["prop_url_endp"],
             price=json_prop["price"],
-            description=json_prop["description"]
+            locality=json_prop["locality"]
         )
         db.session.add(prop_tmp)
         db.session.commit()

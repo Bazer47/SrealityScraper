@@ -7,13 +7,13 @@ class Property(Base):
     __tablename__ = "property"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    title: Mapped[str] = mapped_column(String(100)) 
-    title_url: Mapped[str] = mapped_column(String(1000))
+    name: Mapped[str] = mapped_column(String(100)) 
+    prop_url_endp: Mapped[str] = mapped_column(String(1000))
     price: Mapped[str] = mapped_column(String(30))
-    description: Mapped[str] = mapped_column(String(1000))
+    locality: Mapped[str] = mapped_column(String(500))
 
     def __repr__(self) -> str:
-        return f"Property(id={self.id}, title={self.title}, title_url={self.title_url}, price={self.price}, description={self.description})"
+        return f"Property(id={self.id}, name={self.title}, prop_url_endp={self.title_url}, price={self.price}, locality={self.description})"
     
 class Image(Base):
     __tablename__ = "image"
