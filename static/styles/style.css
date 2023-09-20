@@ -1,0 +1,20 @@
+hr.solid {
+    border-top: 3px solid #bbb;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.row-container {
+    background-color: #f0f8ff;
+    display: inline-flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
