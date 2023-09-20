@@ -22,9 +22,10 @@
                 {% for prop in properties %}
                     <li>
                         <div class="row-container">
-                            <div>
+                            <div class="title-container">
                                 <h3><a href={{ prop.title_url }}>{{ prop.title }}</a></h3>
                                 <h3>{{ prop.description }}</h3>
+                                <h3>Cena: {{ prop.price }}</h3>
                             </div>
                             {% for img in images[prop.id] %}
                                 <div>

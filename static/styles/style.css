@@ -1,20 +1,30 @@
 hr.solid {
-    border-top: 3px solid #bbb;
+    /* border-top: 3px solid #bbb; */
+    height: 3px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(
+    90deg,
+    rgba(13, 8, 96, 1) 0%,
+    rgba(9, 9, 121, 1) 21%,
+    rgba(6, 84, 170, 1) 51%,
+    rgba(0, 255, 113, 1) 100%
+  );
 }
 
-.flex-container {
-    display: flex;
+.title-container {
+    flex: 0 0 300px;
+    overflow: hidden;
 }
 
 .row-container {
     background-color: #f0f8ff;
-    display: inline-flex;
-    flex-direction: row;
+    display: flex;
     column-gap: 20px;
+    /* justify-content: space-between; */
 }
 
-.main-container {
-    display: flex;
-    justify-content: left;
-    align-items: center;
+img {
+    width: 400px;
+    height: 300px;
 }
