@@ -7,7 +7,7 @@ services:
       db:
         condition: service_healthy
   db:
-    container_name: postgres-cont2
+    container_name: postgres-cont
     image: postgres:16.0-alpine
     restart: always
     environment:

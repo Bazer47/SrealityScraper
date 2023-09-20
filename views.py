@@ -15,5 +15,4 @@ def index():
     images = db.session.execute(select(Image).order_by(Image.id)).all()
     images = [img[0] for img in images]
     images_groupby = {k: list(g) for k, g in groupby(images, attrgetter('property_id'))}
-    # print(images_groupby)
     return render_template("index.html", properties=properties, images=images_groupby)
