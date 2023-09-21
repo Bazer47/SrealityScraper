@@ -13,7 +13,7 @@ class Property(Base):
     locality: Mapped[str] = mapped_column(String(500))
 
     def __repr__(self) -> str:
-        return f"Property(id={self.id}, name={self.title}, prop_url_endp={self.title_url}, price={self.price}, locality={self.description})"
+        return f"Property(id={self.id}, name={self.name}, prop_url_endp={self.prop_url_endp}, price={self.price}, locality={self.locality})"
     
 class Image(Base):
     __tablename__ = "image"
