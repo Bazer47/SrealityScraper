@@ -8,8 +8,10 @@ from app import app
 from database import db
 from models import Property, Image
 
+
 @app.route("/")
 def index():
+    # Render properties and images
     properties = db.session.execute(select(Property).order_by(Property.id)).all()
     properties = [prop[0] for prop in properties]
     images = db.session.execute(select(Image).order_by(Image.id)).all()

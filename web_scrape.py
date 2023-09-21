@@ -2,11 +2,13 @@ import json
 
 import scrapy
 
-class SrealitySpider2(scrapy.Spider):
-    name = 'sreality_spider_2'
+
+class SrealitySpider(scrapy.Spider):
+    """Spider for Sreality byty prodej page."""
+    name = 'sreality_spider'
     BASE_URL = "https://www.sreality.cz"
-    N_OF_IMGS = 3
-    N_OF_ITEMS = 500
+    N_OF_IMGS = 3  # N. of images to scrap in one add
+    N_OF_ITEMS = 500  # N. of property adds to request
     url = f"https://www.sreality.cz/api/cs/v2/estates?category_main_cb=1&category_type_cb=1&per_page={N_OF_ITEMS}&tms=0"
 
     def start_requests(self):
@@ -52,8 +54,5 @@ class SrealitySpider2(scrapy.Spider):
             }
 
 # if __name__ == "__main__":
-#     crawler_process.crawl(SrealitySpider2)
+#     crawler_process.crawl(SrealitySpider)
 #     crawler_process.start()  # the script will block here until the crawling is finished
-#     # scrp = SrealitySpider()
-#     # resp = scrp.start_requests()
-#     # next(resp)

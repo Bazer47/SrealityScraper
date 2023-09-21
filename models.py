@@ -3,6 +3,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 
 from database import Base
 
+
 class Property(Base):
     __tablename__ = "property"
 
@@ -14,7 +15,8 @@ class Property(Base):
 
     def __repr__(self) -> str:
         return f"Property(id={self.id}, name={self.name}, prop_url_endp={self.prop_url_endp}, price={self.price}, locality={self.locality})"
-    
+
+
 class Image(Base):
     __tablename__ = "image"
 
