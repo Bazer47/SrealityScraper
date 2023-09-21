@@ -57,4 +57,4 @@ with app.app_context():
     fill_db()
 
 if __name__ == "__main__":
-    app.run(debug=False, host=os.getenv("FLASK_RUN_HOST", "0.0.0.0"), port=5000)
+    app.run(debug=False, host=os.getenv("FLASK_RUN_HOST", "0.0.0.0"), port=8080)
